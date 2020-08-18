@@ -32,7 +32,7 @@ class PostsController extends Controller
             'image' => $imagePath,
         ]);
 
-        return redirect('/profile/' . auth()->user()->ida);
+        return redirect('/profile/' . auth()->user()->id);
         
     }
 
