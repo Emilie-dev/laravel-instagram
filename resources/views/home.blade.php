@@ -15,9 +15,9 @@
                     <div class="pr-5"><strong>212</strong> following</div>
                 </div>
             </div>
-            <div class="pt-4 font-weight-bold">laravel-instagram.com</div>
-            <div>Welcome to laravel-instagram !</div>
-            <div><a href="#">laravel-instagram.com</a></div>
+            <div class="pt-4 font-weight-bold">{{ $user->profile->title }}</div>
+            <div>{{ $user->profile->description }}</div>
+            <div><a href="#">{{ $user->profile->url }}</a></div>
         </div>
     </div>
     <div class="row pt-5">
