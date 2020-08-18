@@ -4,6 +4,8 @@
 <div class="container">
     <form action="/p" enctype="multipart/form-data" method="POST">
 
+        @csrf
+
         <div class="row">
             <div class="col-8 offset-2">
 
@@ -17,7 +19,7 @@
                         <input id="caption" 
                         type="text" 
                         class="form-control @error('caption') is-invalid @enderror" 
-                        caption="caption" value="{{ old('caption') }}"  
+                        name="caption" value="{{ old('caption') }}"  
                         autocomplete="caption" autofocus>
 
                         @error('caption')
@@ -33,7 +35,6 @@
                     <input type="file" class="form-control-file" id="image" name="image">
 
                     @error('image')
-                        <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
