@@ -8,7 +8,7 @@ class PostsController extends Controller
 
 {
     // required authentication to access to the form
-    public function _construct() {
+    public function __construct() {
         $this->middleware('auth');
     }
 
