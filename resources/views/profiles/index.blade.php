@@ -22,11 +22,13 @@
         </div>
     </div>
     <div class="row pt-5">
+
+        @foreach ($user->posts as $post)
         <div class="col-4">
-            <img src="/img/img-posts/img-post-1.png" class="w-100"/>
+        <img src="/storage/{{ $post->image }}" class="w-100"/>
         </div>
-        <div class="col-4"><img src="/img/img-posts/img-post-2.png" class="w-100" /></div>
-        <div class="col-4"><img src="/img/img-posts/img-post-3.png" class="w-100"/></div>
+        @endforeach
+
     </div>
 </div>
 @endsection
