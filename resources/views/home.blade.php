@@ -8,7 +8,7 @@
         </div>
         <div class="col-9 pt-5">
             <div>
-                <h1>laravel-instagram</h1>
+            <h1>{{ }}</h1>
                 <div class="d-flex">
                     <div class="pr-5"><strong>153</strong> posts</div>
                     <div class="pr-5"><strong>23k</strong> followers</div>
