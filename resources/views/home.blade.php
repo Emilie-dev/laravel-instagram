@@ -16,9 +16,16 @@
                 </div>
             </div>
             <div class="pt-4 font-weight-bold">laravel-instagram.com</div>
-            <div>Welcom to laravel-instagram.</div>
+            <div>Welcome to laravel-instagram !</div>
             <div><a href="#">laravel-instagram.com</a></div>
         </div>
+    </div>
+    <div class="row pt-5">
+        <div class="col-4">
+            <img src="img/img-posts/img-post-1.png" class="w-100"/>
+        </div>
+        <div class="col-4"><img src="img/img-posts/img-post-2.png" class="w-100" /></div>
+        <div class="col-4"><img src="img/img-posts/img-post-3.png" class="w-100"/></div>
     </div>
 </div>
 @endsection
