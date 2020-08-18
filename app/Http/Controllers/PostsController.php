@@ -5,7 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 class PostsController extends Controller
+
 {
+    // required authentication to access to the form
+    public function _construct() {
+        $this->middleware('auth');
+    }
+
     public function create() {
         return view('posts.create');
     }
