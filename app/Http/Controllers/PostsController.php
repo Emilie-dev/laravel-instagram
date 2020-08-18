@@ -8,7 +8,7 @@ class PostsController extends Controller
 
 {
     // required authentication to access to the form
-    public function __construct() {
+    public function _²_construct() {
         $this->middleware('auth');
     }
 
@@ -24,9 +24,15 @@ class PostsController extends Controller
             'image' => ['required', 'image'],
         ]);
 
-        // create a post with the authenticated user
-        auth()->user()->posts()->create($data);
+        $imagePath = request('image')->store('uploads', 'public');
 
+        // create a post with the authenticated user
+        auth()->user()->posts()->create([
+            'caption' => $data['caption'],
+            'image' => $imagePath,
+        ]);
+
+        return redirect('/profile/' . auth()->user()->ida);
         
     }
 
