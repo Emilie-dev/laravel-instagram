@@ -25,6 +25,9 @@ class ProfilesController extends Controller
 
     public function update(User $user) {
 
+        // protect the view, only the auth user can update the profile
+        $this->authorize('update', $user->profile);
+
         $data = request()->validate([
             'title' => 'required',
             'description' => 'required',
