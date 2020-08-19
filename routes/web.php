@@ -21,7 +21,7 @@ Auth::routes();
 
 // Profile routes
 Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.show');
-Route::get('/profile/{user}/edit', 'ProfilesController@edit')->name('profile.show');
+Route::get('/profile/{user}/edit', 'ProfilesController@edit')->name('profile.edit');
 
 
 // Posts routes
