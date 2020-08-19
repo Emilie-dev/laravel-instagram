@@ -16,6 +16,9 @@ class ProfilesController extends Controller
 
     public function edit(User $user) {
 
+        // protect the view, only the auth user can edit the profile
+        $this->authorize('update', $user->profile);
+
         return view('profiles.edit', compact('user'));
 
     }
