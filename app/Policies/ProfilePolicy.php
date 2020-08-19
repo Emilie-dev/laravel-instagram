@@ -53,7 +53,7 @@ class ProfilePolicy
      */
     public function update(User $user, Profile $profile)
     {
-        //
+        $user->id = $profile->user->id;
     }
 
     /**
