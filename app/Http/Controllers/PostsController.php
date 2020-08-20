@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 
@@ -9,15 +10,28 @@ class PostsController extends Controller
 
 {
     // required authentication to access to the form
-    public function _²_construct() {
+    public function _²_construct()
+    {
         $this->middleware('auth');
     }
 
-    public function create() {
+    public function index()
+    {
+
+        $users = auth()->user()->following()->pluck('profiles.user_id');
+
+        $posts = Post::whereIn('user_id', $users)->latest()->get();
+
+        return view('posts.index', compact('posts'));
+    }
+
+    public function create()
+    {
         return view('posts.create');
     }
 
-    public function store() {
+    public function store()
+    {
 
         // fields validation
         $data = request()->validate([
@@ -37,13 +51,11 @@ class PostsController extends Controller
         ]);
 
         return redirect('/profile/' . auth()->user()->id);
-        
     }
 
-    public function show(\App\Post $post) {
-        
+    public function show(\App\Post $post)
+    {
+
         return view("posts.show", compact('post'));
-
     }
-
 }
