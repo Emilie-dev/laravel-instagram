@@ -1,5 +1,6 @@
 <?php
 
+use App\Mail\NewUserWelcomeMail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +17,12 @@ use Illuminate\Support\Facades\Route;
 
 
 Auth::routes();
+
+// Temparary route for email
+Route::get('/email', function () {
+    //return a new NewUserWelcomeMail() instance
+    return new NewUserWelcomeMail();
+});
 
 // Follow users route
 Route::post('/follow/{user}', 'FollowsController@store');
